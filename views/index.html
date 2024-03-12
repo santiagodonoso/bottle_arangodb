@@ -1,3 +1,5 @@
+% import x
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 
     <p id="message"></p>
     <form id="frm_user" autocomplete="off">
-        <input name="user_name" type="text">
+        <input name="user_name" type="text" placeholder="name {{x.USER_NAME_MIN}} to {{x.USER_NAME_MAX}} characters">
         <button
             mix-post="/users"
             mix-data="#frm_user"

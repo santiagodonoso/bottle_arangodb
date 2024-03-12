@@ -31,7 +31,7 @@ button{
 form#frm_user{
     display: grid;
     grid-template-columns: 90fr 10fr;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 div#users{
@@ -43,7 +43,8 @@ div#users{
 
 div.user{
     display: grid;
-    grid-template-columns: 10fr 80fr 10fr;
+    grid-template-columns: 5fr 85fr 10fr;
+    gap: 0.5rem;
     align-items: center;
 }
 

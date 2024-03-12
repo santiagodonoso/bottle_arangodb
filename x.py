@@ -1,6 +1,13 @@
-from bottle import request
+from bottle import request, response
 import re
 import requests
+
+##############################
+def disable_cache():
+    response.add_header("Cache-Control", "no-cache, no-store, must-revalidate")
+    response.add_header("Pragma", "no-cache")
+    response.add_header("Expires", 0)   
+
 
 ##############################
 
