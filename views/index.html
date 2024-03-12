@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <script src="/mixhtml.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="frm_user" autocomplete="off">
+        <input name="user_name" type="text">
+        <button
+            mix-post="/users"
+            mix-data="#frm_user"
+            mix-default="Create user"
+            mix-await="Please wait..."
+        >
+            Create user
+        </button>
+    </form>
+
+    <div id="users">
+        % for user in users:
+            % include _user.html
+        % end
+    </div>
+
+
+    <script>
+        const mix_replace_url = "/"
+    </script>
+    
+</body>
+</html>

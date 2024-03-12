@@ -1,0 +1,1 @@
+{"version":31103,"tasks":{"createHistoricPregelSystemCollection":true,"createSystemCollectionsAndIndices":true,"createSystemStatisticsDBServer":true,"dropLegacyAnalyzersCollection":true,"renameReplicationApplierStateFiles":true,"upgradeArangoSearch0_1":true}}
