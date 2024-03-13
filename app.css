@@ -79,6 +79,15 @@ div.user > form > input{
 div.user  > button{
     background-color: #ec4899;
 }
+.user_deleted{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    height: 2rem; 
+    text-align: center;
+}
+
 
 @media only screen and (min-width: 600px) {
 

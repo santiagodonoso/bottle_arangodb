@@ -74,7 +74,7 @@ def _(key):
         print(res)
         return f"""
         <template mix-target="[id='{key}']" mix-replace>
-            <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 2rem; text-align: center;" mix-ttl="2000">User deleted</div>
+            <div class="user_deleted" mix-ttl="2000">User deleted</div>
         </template>
         """
     except Exception as ex:

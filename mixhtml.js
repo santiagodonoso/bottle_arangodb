@@ -206,10 +206,11 @@ setInterval(function(){
         if(el.getAttribute("mix-ttl") <= 0){
             el.remove()
         }else{
-            el.setAttribute("mix-ttl", el.getAttribute("mix-ttl") - 1000)
+
+            el.setAttribute("mix-ttl", el.getAttribute("mix-ttl") - 250)
         }
     })
-}, 500)
+}, 250)
 
 // ##############################
 function mix_convert(){
