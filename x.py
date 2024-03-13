@@ -1,4 +1,5 @@
 from bottle import request, response
+from icecream import ic
 import re
 import requests
 
@@ -15,6 +16,8 @@ def db(query):
     try:
         url = "http://arangodb:8529/_api/cursor"
         res = requests.post( url, json = query )
+        ic(res)
+        ic(res.text)
         return res.json()
     except Exception as ex:
         print("#"*50)

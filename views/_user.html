@@ -1,9 +1,16 @@
+% import x
+
 <div id="{{user['_key']}}" class="user">
     <div>
         {{user["_key"]}}
     </div>
     <form id="user_{{user['_key']}}">
-        <input name="user_name" id="" value="{{user['name']}}" mix-blur mix-put="/users/{{user['_key']}}" mix-data="#user_{{user['_key']}}">        
+
+        <input name="user_name" value="{{user['name']}}" 
+        mix-check="{{x.USER_NAME_REGEX}}" mix-blur mix-put="/users/{{user['_key']}}" mix-data="#user_{{user['_key']}}"> 
+        
+        <input name="user_last_name" value="{{user['last_name']}}" 
+        mix-check="{{x.USER_LAST_NAME_REGEX}}" mix-blur mix-put="/users/{{user['_key']}}" mix-data="#user_{{user['_key']}}">         
     </form>
     
     <button

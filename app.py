@@ -35,9 +35,10 @@ def _():
 def _():
     try:
         user_name = x.validate_user_name()
-        user = {"name":user_name}
+        user_last_name = x.validate_user_last_name()
+        ic(user_last_name)
+        user = {"name":user_name, "last_name":user_last_name}
         res = x.db({"query":"INSERT @doc IN users RETURN NEW", "bindVars":{"doc":user}})
-        print(res)
         html = template("_user.html", user=res["result"][0])
         return f"""
         <template mix-target="#users" mix-top>
@@ -81,14 +82,16 @@ def _(key):
 @put("/users/<key>")
 def _(key):
     try:
-        name = request.forms.get("user_name")
+        name = x.validate_user_name()
+        last_name = x.validate_user_last_name()
         res = x.db({"query":"""
-                        UPDATE { _key: @key, name: @name } 
+                        UPDATE { _key: @key, name: @name, last_name:@last_name } 
                         IN users 
                         RETURN NEW""",
                     "bindVars":{
                         "key": f"{key}",
-                        "name":f"{name}"
+                        "name":f"{name}",
+                        "last_name":f"{last_name}"
                     }})
         return f"""
         <template>            
