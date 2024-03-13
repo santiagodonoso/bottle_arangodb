@@ -1,4 +1,4 @@
-from bottle import delete, get, post, request, static_file, template
+from bottle import delete, get, post, put, request, static_file, template
 import x
 from icecream import ic
 
@@ -77,6 +77,33 @@ def _(key):
 
 
 
+##############################
+@put("/users/<key>")
+def _(key):
+    try:
+        name = request.forms.get("user_name")
+        res = x.db({"query":"""
+                        UPDATE { _key: @key, name: @name } 
+                        IN users 
+                        RETURN NEW""",
+                    "bindVars":{
+                        "key": f"{key}",
+                        "name":f"{name}"
+                    }})
+        return f"""
+        <template>            
+        </template>
+        """
+    except Exception as ex:
+        ic(ex)
+        if "user_name" in str(ex):
+            return f"""
+            <template mix-target="#message">
+                {ex.args[1]}
+            </template>
+            """            
+    finally:
+        pass
 
 
 

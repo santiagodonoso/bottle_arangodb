@@ -1,7 +1,9 @@
 *{
-    margin: 0; padding: 0; box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box; font-weight: 300;
 }
-
+.mix-error{
+    background-color: rgba(255,0,0,0.2);
+}
 body{
     width: 100%;
     height: 100vh;
@@ -30,9 +32,17 @@ button{
 
 form#frm_user{
     display: grid;
-    grid-template-columns: 90fr 10fr;
+    /* grid-template-columns: 100fr 100fr 30fr; */
     gap: 0.5rem;
 }
+label{
+    display: flex;
+}
+label > span:nth-child(2){
+    margin-left: auto;
+    color: rgba(0,0,0,0.3);
+}
+
 
 div#users{
     display: flex;

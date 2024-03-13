@@ -2,7 +2,10 @@
     <div>
         {{user["_key"]}}
     </div>
-    <input value="{{user['name']}}">        
+    <form id="user_{{user['_key']}}">
+        <input name="user_name" id="" value="{{user['name']}}" mix-blur mix-put="/users/{{user['_key']}}" mix-data="#user_{{user['_key']}}">        
+    </form>
+    
     <button
         mix-delete="/users/{{user['_key']}}"
         mix-default="Delete"
