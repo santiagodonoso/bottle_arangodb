@@ -13,6 +13,8 @@ def disable_cache():
 
 def db(query):
     try:
+        # docker.for.mac.host.internal
+        # docker.for.win.host.internal
         url = "http://host.docker.internal:8529/_api/cursor"
         res = requests.post( url, json = query )
         return res.json()

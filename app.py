@@ -17,7 +17,18 @@ def _():
 def _():
     return static_file("mixhtml.js", ".")
 
-
+##############################
+@get("/")
+def _():
+    try:
+        x.disable_cache()
+        users = x.db({"query":"FOR user IN users RETURN user"})
+        return template("index", users=users["result"])
+    except Exception as ex:
+        ic(ex)
+        return "system under maintainance"         
+    finally:
+        pass
 
 ##############################
 @post("/users")
