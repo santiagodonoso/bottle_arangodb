@@ -40,9 +40,13 @@ def _():
         user = {"name":user_name, "last_name":user_last_name}
         res = x.db({"query":"INSERT @doc IN users RETURN NEW", "bindVars":{"doc":user}})
         html = template("_user.html", user=res["result"][0])
+        form_create_user =  template("_form_create_user.html")
         return f"""
         <template mix-target="#users" mix-top>
             {html}
+        </template>
+        <template mix-target="#frm_user" mix-replace>
+            {form_create_user}
         </template>
         """
     except Exception as ex:

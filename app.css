@@ -8,6 +8,7 @@ body{
     width: 100%;
     height: 100vh;
     padding: 0.5rem;
+    background-color: #e5e5e5;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -18,28 +19,36 @@ input{
     width: 100%;
     height: 2rem;
     padding: 0 0.5rem;
-    border: 1px solid rgba(0,0,0,0.7);
+    border: 1px solid rgba(0,0,0,0.4);
     outline: none;
     border-radius: 2%;
 }
 button{
     width: 100%;
     height: 2rem;
-    bordeR: 1px solid rgba(0,0,0,0.7);
+    color: white;
+    background-color: #06b6d4;
+    font-weight: bold;
     outline: none;
-    border-radius: 2%;
+    border: none;
+    border-radius: 5%;
 }
 
 form#frm_user{
     display: grid;
-    /* grid-template-columns: 100fr 100fr 30fr; */
-    gap: 0.5rem;
+    grid-template-columns: 100fr 100fr 40fr;
+    align-items: center;
+    gap: 0.1rem;
+}
+form#frm_user > button{
+    margin-top: auto;
 }
 label{
     display: flex;
+    gap: 0.5rem;
 }
 label > span:nth-child(2){
-    margin-left: auto;
+    /* margin-left: auto; */
     color: rgba(0,0,0,0.3);
 }
 
@@ -53,9 +62,21 @@ div#users{
 
 div.user{
     display: grid;
-    /* grid-template-columns: 5fr 85fr 10fr; */
-    gap: 0.5rem;
+    grid-template-columns: 100fr 20fr;
+    gap: 0.1rem;
     align-items: center;
+}
+div.user > form{
+    display: grid;
+    grid-template-columns: 100fr 100fr;
+    gap: 0.1rem;
+    align-items: center;
+}
+div.user > form > input{
+    border: none;
+}
+div.user  > button{
+    background-color: #ec4899;
 }
 
 @media only screen and (min-width: 600px) {
