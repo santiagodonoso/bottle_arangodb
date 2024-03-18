@@ -11,7 +11,7 @@
 [DBOptions]
   compaction_readahead_size=2097152
   strict_bytes_per_sync=false
-  bytes_per_sync=0
+  bytes_per_sync=1048576
   max_background_jobs=12
   avoid_flush_during_shutdown=false
   max_background_flushes=-1
@@ -21,7 +21,7 @@
   writable_file_max_buffer_size=1048576
   wal_bytes_per_sync=0
   max_background_compactions=-1
-  max_total_wal_size=4194304
+  max_total_wal_size=83886080
   delete_obsolete_files_period_micros=21600000000
   stats_dump_period_sec=600
   stats_history_buffer_size=1048576
@@ -71,7 +71,7 @@
   wal_filter=nullptr
   table_cache_numshardbits=6
   dump_malloc_stats=false
-  db_write_buffer_size=2409689907
+  db_write_buffer_size=2409688268
   allow_ingest_behind=false
   keep_log_file_num=1000
   max_bgerror_resume_count=2147483647

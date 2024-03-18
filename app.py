@@ -18,6 +18,17 @@ def _():
     return static_file("mixhtml.js", ".")
 
 ##############################
+@get("/test")
+def _():
+    try:
+        return template("test")
+    except Exception as ex:
+        pass
+    finally:
+        pass
+
+
+##############################
 @get("/")
 def _():
     try:
@@ -74,14 +85,13 @@ def _(key):
         print(res)
         return f"""
         <template mix-target="[id='{key}']" mix-replace>
-            <div class="user_deleted" mix-ttl="2000">User deleted</div>
+            <div class="mix-fade-out user_deleted" mix-ttl="2000">User deleted</div>
         </template>
         """
     except Exception as ex:
         ic(ex)
     finally:
         pass
-
 
 
 ##############################

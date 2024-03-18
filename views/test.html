@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fade Out Element with CSS Animation</title>
+<style>
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    .fade-out {
+        animation: fadeOut 1s ease-out forwards; /* Adjust the duration and timing function as needed */
+    }
+</style>
+</head>
+<body>
+
+<div class="fade-out" id="element">
+    This is the element to fade out.
+</div>
+
+</body>
+</html>
