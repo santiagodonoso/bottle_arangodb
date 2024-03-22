@@ -1,4 +1,4 @@
-from bottle import delete, get, post, put, request, static_file, template
+from bottle import default_app, delete, get, post, put, request, static_file, template, run
 import x
 from icecream import ic
 
@@ -85,7 +85,7 @@ def _(key):
         print(res)
         return f"""
         <template mix-target="[id='{key}']" mix-replace>
-            <div class="mix-fade-out user_deleted" mix-ttl="2000">User deleted</div>
+            <div class="mix-fade-out user_deleted" mix-ttl="250">User deleted</div>
         </template>
         """
     except Exception as ex:
@@ -127,14 +127,4 @@ def _(key):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+app = default_app()

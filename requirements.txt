@@ -3,3 +3,4 @@ requests == 2.31.0
 faker == 19.6.2
 paste == 3.5.3
 icecream == 2.1.3
+gunicorn == 21.2.0 
